@@ -15,13 +15,13 @@ export const StayDetailsContainer = styled.div`
 
 export const StayImageContainer = styled.div`
    ${tw`
-        rounded-24px
+        w-full max-h-269px rounded-24px
     `}
 `
 
 export const StayImage = styled.img`
    ${tw`
-        w-full h-full rounded-24px
+        w-full h-full object-cover rounded-24px
     `}
 `
 

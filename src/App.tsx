@@ -1,12 +1,11 @@
 import React, { ReactElement } from 'react'
 
-import stays from './data/stays.json'
-import Stay from './Windbnb/components/Stay'
+import StaysList from './Windbnb/components/StaysList'
 
 function App(): ReactElement {
    return (
       <div>
-         <Stay stayDetails={stays[2]} />
+         <StaysList />
       </div>
    )
 }
