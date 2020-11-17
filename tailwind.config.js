@@ -1,6 +1,8 @@
 const colors = {
    burntSienna: '#EB5757',
-   gray31: '#4F4F4F'
+   gray20: '#333333',
+   gray31: '#4F4F4F',
+   gray3: '#828282'
 }
 
 module.exports = {
@@ -299,9 +301,13 @@ module.exports = {
             '"Liberation Mono"',
             '"Courier New"',
             'monospace'
-         ]
+         ],
+         montserrat: 'Montserrat'
       },
       fontSize: {
+         '12px': '12px',
+         '14px': '14px',
+         '16px': '16px',
          xs: '0.75rem',
          sm: '0.875rem',
          base: '1rem',

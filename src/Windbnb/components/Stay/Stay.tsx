@@ -12,6 +12,7 @@ import {
    StayRatingsContainer,
    StayRatingsText,
    StaySuperHostBadge,
+   StaySuperHostBadgeText,
    StayTitleContainer,
    StayTitleText,
    StayTypeText
@@ -27,7 +28,9 @@ class Stay extends Component<StayProps> {
          stayDetails: { superHost }
       } = this.props
       return superHost ? (
-         <StaySuperHostBadge>Super Host</StaySuperHostBadge>
+         <StaySuperHostBadge>
+            <StaySuperHostBadgeText>Super Host</StaySuperHostBadgeText>
+         </StaySuperHostBadge>
       ) : null
    }
 
