@@ -17,6 +17,6 @@
       "noImplicitAny": false,
       "noFallthroughCasesInSwitch": true
    },
-   "include": ["src", "twin.d.ts", "tailwind.config.js"],
+   "include": ["src", "twin.d.ts", "tailwind.config.js", "stories"],
    "exclude": ["node_modules", "node_modules/*"]
 }
