@@ -5,7 +5,11 @@ import WindbnbLogo from '../../../Common/icons/WindbnbLogo'
 
 import StaysFilterButtons from '../StaysFilterButtons'
 
-import { FilterBarContainer, WindbnbLogoContainer } from './styledComponents'
+import {
+   FilterBarContainer,
+   StaysFilterButtonsContainer,
+   WindbnbLogoContainer
+} from './styledComponents'
 
 interface StaysFilterBarProps {
    onClickSearchInputButton: () => void
@@ -21,7 +25,9 @@ const StaysFilterBar = observer(
          <WindbnbLogoContainer>
             <WindbnbLogo />
          </WindbnbLogoContainer>
-         <StaysFilterButtons {...props} />
+         <StaysFilterButtonsContainer>
+            <StaysFilterButtons {...props} />
+         </StaysFilterButtonsContainer>
       </FilterBarContainer>
    )
 )
