@@ -25,6 +25,14 @@ export const Typo14Gray31MontserratMedium = styled(BaseMontserratMediumText)`
    ${tw`text-14px text-gray31`}
 `
 
+export const Typo14SilverChaliceMontserratSemiBold = styled(
+   BaseMontserratSemiBoldText
+)`
+   ${tw`
+      text-14px text-silverChalice
+   `}
+`
+
 export const Typo12Gray31MontserratBold = styled(BaseMontserratBoldText)`
    ${tw`text-12px text-gray31`}
 `

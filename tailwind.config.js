@@ -24,6 +24,7 @@ const colors = {
    sangria10: 'rgba(154, 0, 7, .1)',
    sangria: '#9A0007',
    silver: '#BDBDBD',
+   silverChalice: '#A9A9A9',
    white: '#ffffff'
 }
 
@@ -505,6 +506,7 @@ module.exports = {
       width: (theme) => ({
          auto: 'auto',
          ...theme('spacing'),
+         '402px': '402px',
          '1/2': '50%',
          '1/3': '33.333333%',
          '2/3': '66.666667%',
