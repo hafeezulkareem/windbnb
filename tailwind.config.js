@@ -2,6 +2,7 @@ const colors = {
    burntOrange10: 'rgba(211, 84, 0, .1)',
    burntOrange: '#D35400',
    burntSienna: '#EB5757',
+   concrete: '#F2F2F2',
    darkGray10: 'rgba(174, 174, 174, .1)',
    darkGray: '#AEAEAE',
    darkSpringGreen10: 'rgba(20, 89, 52, .1)',
@@ -22,6 +23,7 @@ const colors = {
    sanJuan: '#455A64',
    sangria10: 'rgba(154, 0, 7, .1)',
    sangria: '#9A0007',
+   silver: '#BDBDBD',
    white: '#ffffff'
 }
 
@@ -262,6 +264,7 @@ module.exports = {
          8: '8px'
       },
       boxShadow: {
+         filterButtons: '0px 1px 6px rgba(0, 0, 0, 0.1)',
          xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
          sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
          default:
