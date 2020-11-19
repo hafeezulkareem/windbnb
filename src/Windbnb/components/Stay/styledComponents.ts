@@ -9,7 +9,7 @@ import {
 
 export const StayDetailsContainer = styled.div`
    ${tw`
-        max-w-395px flex flex-col
+        max-w-395px flex flex-col mt-50px mr-32px
     `}
 `
 

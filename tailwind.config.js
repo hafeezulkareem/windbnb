@@ -150,6 +150,9 @@ module.exports = {
          '10px': '10px',
          '12px': '12px',
          '16px': '16px',
+         '32px': '32px',
+
+         '50px': '50px',
          1: '0.25rem',
          2: '0.5rem',
          3: '0.75rem',
@@ -308,6 +311,7 @@ module.exports = {
          '12px': '12px',
          '14px': '14px',
          '16px': '16px',
+         '24px': '24px',
          xs: '0.75rem',
          sm: '0.875rem',
          base: '1rem',

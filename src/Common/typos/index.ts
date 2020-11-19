@@ -34,3 +34,7 @@ export const Typo16Gray20MontserratSemiBold = styled(
 )`
    ${tw`text-16px text-gray20`}
 `
+
+export const Typo24Gray20MontserratBold = styled(BaseMontserratBoldText)`
+   ${tw`text-24px text-gray20`}
+`
