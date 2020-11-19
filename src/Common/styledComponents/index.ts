@@ -2,6 +2,6 @@ import tw, { styled } from 'twin.macro'
 
 export const HorizontalDivider = styled.div`
    ${tw`
-        w-1px h-full bg-concrete
+        w-2px h-full bg-concrete
     `}
 `

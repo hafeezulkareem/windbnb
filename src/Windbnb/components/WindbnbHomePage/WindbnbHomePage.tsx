@@ -2,6 +2,7 @@ import { inject, observer } from 'mobx-react'
 import React, { Component, ReactElement } from 'react'
 
 import WindbnbStore from '../../stores/WindbnbStore/WindbnbStore'
+import StaysFilterBar from '../StaysFilterBar'
 
 import StaysHeader from '../StaysHeader'
 import StaysList from '../StaysList'
@@ -31,6 +32,13 @@ class WindbnbHomePage extends Component<WindbnbProps> {
       const { stays } = this.windbnbStore
       return (
          <HomePageContainer>
+            <StaysFilterBar
+               onClickSearchInputButton={(): void => {}}
+               onClickAddGuestsButton={(): void => {}}
+               onClickSearchButton={(): void => {}}
+               selectedPlace={'Helsinki, Finland'}
+               guestsCount={5}
+            />
             <StaysHeader country={'Finland'} staysCount={stays.length} />
             <StaysList stays={stays} />
          </HomePageContainer>

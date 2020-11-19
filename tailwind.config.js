@@ -167,7 +167,9 @@ module.exports = {
       spacing: {
          px: '1px',
          0: '0',
+         '2px': '2px',
          '4px': '4px',
+         '6px': '6px',
          '8px': '8px',
          '10px': '10px',
          '12px': '12px',
@@ -177,6 +179,7 @@ module.exports = {
          '32px': '32px',
          '42px': '42px',
          '50px': '50px',
+         '64px': '64px',
          '94px': '94px',
          1: '0.25rem',
          2: '0.5rem',
@@ -244,6 +247,7 @@ module.exports = {
          '4px': '4px',
          '6px': '6px',
          '12px': '12px',
+         '16px': '16px',
          '24px': '24px',
          '50px': '50px',
          sm: '0.125rem',
@@ -339,6 +343,7 @@ module.exports = {
          mulish: 'Mulish'
       },
       fontSize: {
+         '9px': '9px',
          '12px': '12px',
          '14px': '14px',
          '16px': '16px',

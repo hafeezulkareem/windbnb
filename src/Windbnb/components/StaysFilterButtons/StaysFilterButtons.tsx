@@ -1,14 +1,16 @@
-import React, { ReactElement } from 'react'
+import React, { Component, ReactElement, ReactNode } from 'react'
 import { observer } from 'mobx-react'
 import { BiSearchAlt2 } from 'react-icons/bi'
 
-import { HorizontalDivider } from '../../../Common/styledComponent'
+import { HorizontalDivider } from '../../../Common/styledComponents'
 import { colors } from '../../../Common/themes/colors'
 
 import {
    AddGuestsButton,
-   AddGuestsButtonText,
+   AddGuestsText,
    FilterButtonsContainer,
+   GuestsCountText,
+   GuestsTitleText,
    SearchButton,
    SearchInputButton,
    SearchInputButtonText
@@ -22,14 +24,29 @@ interface StaysFilterButtonsProps {
    guestsCount: number
 }
 
-const StaysFilterButtons = observer(
-   (props: StaysFilterButtonsProps): ReactElement => {
+@observer
+class StaysFilterButtons extends Component<StaysFilterButtonsProps> {
+   renderAddGuestsButtonChildren = (): ReactNode => {
+      const { guestsCount } = this.props
+      return guestsCount > 0 ? (
+         <>
+            <GuestsTitleText>Guests</GuestsTitleText>
+            <GuestsCountText>
+               {guestsCount} {guestsCount > 1 ? 'guests' : 'guest'}
+            </GuestsCountText>
+         </>
+      ) : (
+         <AddGuestsText>Add Guests</AddGuestsText>
+      )
+   }
+
+   render(): ReactElement {
       const {
          selectedPlace,
          onClickSearchInputButton,
          onClickAddGuestsButton,
          onClickSearchButton
-      } = props
+      } = this.props
       return (
          <FilterButtonsContainer>
             <SearchInputButton onClick={onClickSearchInputButton}>
@@ -37,15 +54,15 @@ const StaysFilterButtons = observer(
             </SearchInputButton>
             <HorizontalDivider />
             <AddGuestsButton onClick={onClickAddGuestsButton}>
-               <AddGuestsButtonText>Add Guests</AddGuestsButtonText>
+               {this.renderAddGuestsButtonChildren()}
             </AddGuestsButton>
             <HorizontalDivider />
             <SearchButton onClick={onClickSearchButton}>
-               <BiSearchAlt2 fill={colors.burntSienna} />
+               <BiSearchAlt2 size={22} fill={colors.burntSienna} />
             </SearchButton>
          </FilterButtonsContainer>
       )
    }
-)
+}
 
 export default StaysFilterButtons

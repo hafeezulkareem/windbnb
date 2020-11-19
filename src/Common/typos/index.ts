@@ -52,6 +52,10 @@ const BaseMulishBoldText = styled(BaseMulishText)`
    ${tw`font-bold`}
 `
 
+const BaseMulishExtraBoldText = styled(BaseMulishText)`
+   ${tw`font-extrabold`}
+`
+
 export const Typo14BlackMulishBold = styled(BaseMulishBoldText)`
    ${tw`text-14px text-black`}
 `
@@ -69,5 +73,11 @@ export const Typo14Gray20MulishNormal = styled(BaseMulishText)`
 export const Typo14SilverMulishNormal = styled(BaseMulishText)`
    ${tw`
       text-14px text-silver
+   `}
+`
+
+export const Typo9Gray20MulishExtraBold = styled(BaseMulishExtraBoldText)`
+   ${tw`
+      text-9px text-gray20
    `}
 `

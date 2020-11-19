@@ -7,7 +7,7 @@ import {
 
 export const HeaderContainer = styled.div`
    ${tw`
-        flex justify-between items-center
+        flex justify-between items-center mt-64px
     `}
 `
 
