@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react'
 import { observer } from 'mobx-react'
+import { BiMinus, BiPlus } from 'react-icons/bi'
 
 import {
    CounterButton,
@@ -27,10 +28,12 @@ const GuestCounter = observer(
             <CounterDescription>{description}</CounterDescription>
             <CounterButtonsContainer>
                <CounterButton onClick={decrement} disabled={count === 0}>
-                  -
+                  <BiMinus />
                </CounterButton>
                <CountText>{count}</CountText>
-               <CounterButton onClick={increment}>+</CounterButton>
+               <CounterButton onClick={increment}>
+                  <BiPlus />
+               </CounterButton>
             </CounterButtonsContainer>
          </CounterContainer>
       )

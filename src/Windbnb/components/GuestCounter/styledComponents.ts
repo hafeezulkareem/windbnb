@@ -25,7 +25,7 @@ export const CounterButtonsContainer = styled.div`
 
 export const CounterButton = styled(Button)`
    ${tw`
-      p-8px
+      p-8px rounded-4px
    `}
 `
 
