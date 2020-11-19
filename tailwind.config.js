@@ -239,8 +239,11 @@ module.exports = {
       borderOpacity: (theme) => theme('opacity'),
       borderRadius: {
          none: '0',
+         '4px': '4px',
+         '6px': '6px',
          '12px': '12px',
          '24px': '24px',
+         '50px': '50px',
          sm: '0.125rem',
          default: '0.25rem',
          md: '0.375rem',
@@ -248,7 +251,8 @@ module.exports = {
          xl: '0.75rem',
          '2xl': '1rem',
          '3xl': '1.5rem',
-         full: '9999px'
+         full: '9999px',
+         '100%': '100%'
       },
       borderWidth: {
          default: '1px',
