@@ -1,13 +1,21 @@
-import React, { ReactElement } from 'react'
+import React, { Component, ReactElement } from 'react'
+import { Provider, observer } from 'mobx-react'
 
-import StaysList from './Windbnb/components/StaysList'
+import WindbnbHomePage from './Windbnb/components/WindbnbHomePage'
 
-function App(): ReactElement {
-   return (
-      <div>
-         <StaysList />
-      </div>
-   )
+import stores from './Common/stores'
+
+@observer
+class App extends Component {
+   render(): ReactElement {
+      return (
+         <Provider {...stores}>
+            <div>
+               <WindbnbHomePage />
+            </div>
+         </Provider>
+      )
+   }
 }
 
 export default App

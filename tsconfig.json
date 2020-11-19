@@ -13,10 +13,17 @@
       "resolveJsonModule": true,
       "isolatedModules": true,
       "noEmit": true,
-      "jsx": "react",
       "noImplicitAny": false,
+      "jsx": "react",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
       "noFallthroughCasesInSwitch": true
    },
-   "include": ["src", "twin.d.ts", "tailwind.config.js", "stories"],
-   "exclude": ["node_modules", "node_modules/*"]
+   "include": ["src", "twin.d.ts", "tailwind.config.js"],
+   "exclude": [
+      "node_modules/@storybook",
+      "node_modules",
+      "node_modules/*",
+      "babel.config.js"
+   ]
 }
