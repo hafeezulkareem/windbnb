@@ -308,7 +308,8 @@ module.exports = {
             '"Courier New"',
             'monospace'
          ],
-         montserrat: 'Montserrat'
+         montserrat: 'Montserrat',
+         mulish: 'Mulish'
       },
       fontSize: {
          '12px': '12px',

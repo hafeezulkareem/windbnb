@@ -38,3 +38,24 @@ export const Typo16Gray20MontserratSemiBold = styled(
 export const Typo24Gray20MontserratBold = styled(BaseMontserratBoldText)`
    ${tw`text-24px text-gray20`}
 `
+
+/* Mulish Font Styled Components */
+const BaseMulishText = styled.span`
+   ${tw`font-mulish`}
+`
+
+const BaseMulishMediumText = styled(BaseMulishText)`
+   ${tw`font-medium`}
+`
+
+const BaseMulishBoldText = styled(BaseMulishText)`
+   ${tw`font-bold`}
+`
+
+export const Typo14BlackMulishBold = styled(BaseMulishBoldText)`
+   ${tw`text-14px text-black`}
+`
+
+export const Typo14Gray31MulishMedium = styled(BaseMulishMediumText)`
+   ${tw`text-14px text-gray31`}
+`
