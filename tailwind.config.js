@@ -182,7 +182,6 @@ module.exports = {
          '42px': '42px',
          '50px': '50px',
          '64px': '64px',
-         '94px': '94px',
          1: '0.25rem',
          2: '0.5rem',
          3: '0.75rem',
@@ -417,13 +416,11 @@ module.exports = {
          ...negative(theme('spacing'))
       }),
       maxHeight: {
-         '269px': '269px',
          full: '100%',
          screen: '100vh'
       },
       maxWidth: (theme, { breakpoints }) => ({
          none: 'none',
-         '395px': '395px',
          xs: '20rem',
          sm: '24rem',
          md: '28rem',
@@ -506,7 +503,6 @@ module.exports = {
       width: (theme) => ({
          auto: 'auto',
          ...theme('spacing'),
-         '402px': '402px',
          '1/2': '50%',
          '1/3': '33.333333%',
          '2/3': '66.666667%',

@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro'
+
 import { Typo14SilverChaliceMontserratSemiBold } from '../../../Common/typos'
 
 export const FooterContainer = styled.div`
@@ -9,7 +10,7 @@ export const FooterContainer = styled.div`
 
 export const HorizontalLine = styled.div`
    ${tw`
-        w-402px h-px bg-silver
+        w-9/12 md:w-6/12 lg:w-3/12 h-px bg-silver
     `}
 `
 

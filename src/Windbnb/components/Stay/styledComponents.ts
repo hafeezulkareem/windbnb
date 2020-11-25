@@ -9,13 +9,13 @@ import {
 
 export const StayDetailsContainer = styled.div`
    ${tw`
-        max-w-395px flex flex-col mt-50px mr-0 md:mr-32px
+        flex flex-col
     `}
 `
 
 export const StayImageContainer = styled.div`
    ${tw`
-        w-full max-h-269px rounded-24px
+        w-full h-64 rounded-24px
     `}
 `
 
