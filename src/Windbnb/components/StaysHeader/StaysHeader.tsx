@@ -1,4 +1,4 @@
-import React, { Component, ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 
 import {
    HeaderContainer,
@@ -13,20 +13,18 @@ interface StaysHeaderProps {
    staysCount: number
 }
 
-class StaysHeader extends Component<StaysHeaderProps> {
-   render(): ReactElement {
-      const { country, staysCount } = this.props
-      return (
-         <HeaderContainer>
-            <HeaderTitleContainer>
-               <TitleText>{country}</TitleText>
-            </HeaderTitleContainer>
-            <StaysCountContainer>
-               <StaysCountText>{staysCount - 2}+ stays</StaysCountText>
-            </StaysCountContainer>
-         </HeaderContainer>
-      )
-   }
+function StaysHeader(props: StaysHeaderProps): ReactElement {
+   const { country, staysCount } = props
+   return (
+      <HeaderContainer>
+         <HeaderTitleContainer>
+            <TitleText>{country}</TitleText>
+         </HeaderTitleContainer>
+         <StaysCountContainer>
+            <StaysCountText>{staysCount - 2}+ stays</StaysCountText>
+         </StaysCountContainer>
+      </HeaderContainer>
+   )
 }
 
 export default StaysHeader
