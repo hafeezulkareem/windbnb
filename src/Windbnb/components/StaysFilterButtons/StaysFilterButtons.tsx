@@ -1,4 +1,4 @@
-import React, { Component, ReactElement, ReactNode } from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 import { BiSearchAlt2 } from 'react-icons/bi'
 
 import { VerticalDivider } from '../../../Common/styledComponents'
@@ -23,10 +23,17 @@ interface StaysFilterButtonsProps {
    guestsCount: number
 }
 
-class StaysFilterButtons extends Component<StaysFilterButtonsProps> {
-   renderAddGuestsButtonChildren = (): ReactNode => {
-      const { guestsCount } = this.props
-      return guestsCount > 0 ? (
+function StaysFilterButtons(props: StaysFilterButtonsProps): ReactElement {
+   const {
+      selectedPlace,
+      guestsCount,
+      onClickSearchInputButton,
+      onClickAddGuestsButton,
+      onClickSearchButton
+   } = props
+
+   const renderAddGuestsButtonChildren = (): ReactNode =>
+      guestsCount > 0 ? (
          <>
             <GuestsTitleText>Guests</GuestsTitleText>
             <GuestsCountText>
@@ -36,33 +43,24 @@ class StaysFilterButtons extends Component<StaysFilterButtonsProps> {
       ) : (
          <AddGuestsText>Add Guests</AddGuestsText>
       )
-   }
 
-   render(): ReactElement {
-      const {
-         selectedPlace,
-         onClickSearchInputButton,
-         onClickAddGuestsButton,
-         onClickSearchButton
-      } = this.props
-      return (
-         <FilterButtonsContainer>
-            <SearchInputButton onClick={onClickSearchInputButton}>
-               <SearchInputButtonText>
-                  {selectedPlace === '' ? 'Select location' : selectedPlace}
-               </SearchInputButtonText>
-            </SearchInputButton>
-            <VerticalDivider />
-            <AddGuestsButton onClick={onClickAddGuestsButton}>
-               {this.renderAddGuestsButtonChildren()}
-            </AddGuestsButton>
-            <VerticalDivider />
-            <SearchButton onClick={onClickSearchButton}>
-               <BiSearchAlt2 size={22} fill={colors.burntSienna} />
-            </SearchButton>
-         </FilterButtonsContainer>
-      )
-   }
+   return (
+      <FilterButtonsContainer>
+         <SearchInputButton onClick={onClickSearchInputButton}>
+            <SearchInputButtonText>
+               {selectedPlace === '' ? 'Select location' : selectedPlace}
+            </SearchInputButtonText>
+         </SearchInputButton>
+         <VerticalDivider />
+         <AddGuestsButton onClick={onClickAddGuestsButton}>
+            {renderAddGuestsButtonChildren()}
+         </AddGuestsButton>
+         <VerticalDivider />
+         <SearchButton onClick={onClickSearchButton}>
+            <BiSearchAlt2 size={22} fill={colors.burntSienna} />
+         </SearchButton>
+      </FilterButtonsContainer>
+   )
 }
 
 export default StaysFilterButtons

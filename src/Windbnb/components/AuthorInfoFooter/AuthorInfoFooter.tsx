@@ -1,4 +1,4 @@
-import React, { Component, ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 
 import {
    AuthorInfoContainer,
@@ -7,17 +7,15 @@ import {
    HorizontalLine
 } from './styledComponents'
 
-class AuthorInfoFooter extends Component {
-   render(): ReactElement {
-      return (
-         <FooterContainer>
-            <HorizontalLine />
-            <AuthorInfoContainer>
-               <AuthorInfoText>Hafeezul Kareem Shaik</AuthorInfoText>
-            </AuthorInfoContainer>
-         </FooterContainer>
-      )
-   }
+function AuthorInfoFooter(): ReactElement {
+   return (
+      <FooterContainer>
+         <HorizontalLine />
+         <AuthorInfoContainer>
+            <AuthorInfoText>Hafeezul Kareem Shaik</AuthorInfoText>
+         </AuthorInfoContainer>
+      </FooterContainer>
+   )
 }
 
 export default AuthorInfoFooter

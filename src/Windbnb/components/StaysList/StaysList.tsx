@@ -1,4 +1,4 @@
-import React, { Component, ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 
 import Stay from '../Stay'
 
@@ -8,17 +8,15 @@ interface StaysListProps {
    stays
 }
 
-class StaysList extends Component<StaysListProps> {
-   render(): ReactElement {
-      const { stays } = this.props
-      return (
-         <StaysListContainer>
-            {stays.map((stay) => (
-               <Stay key={stay.id} stayDetails={stay} />
-            ))}
-         </StaysListContainer>
-      )
-   }
+function StaysList(props: StaysListProps): ReactElement {
+   const { stays } = props
+   return (
+      <StaysListContainer>
+         {stays.map((stay) => (
+            <Stay key={stay.id} stayDetails={stay} />
+         ))}
+      </StaysListContainer>
+   )
 }
 
 export default StaysList
