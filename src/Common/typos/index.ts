@@ -68,6 +68,10 @@ export const Typo14BlackMulishBold = styled(BaseMulishBoldText)`
    ${tw`text-14px text-black`}
 `
 
+export const Typo14ConcreteMulishBold = styled(BaseMulishBoldText)`
+   ${tw`text-14px text-concrete`}
+`
+
 export const Typo14Gray31MulishMedium = styled(BaseMulishMediumText)`
    ${tw`text-14px text-gray31`}
 `

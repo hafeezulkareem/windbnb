@@ -13,6 +13,7 @@ const colors = {
    gray20: '#333333',
    gray31: '#4F4F4F',
    gray3: '#828282',
+   mandy: '#EB5763',
    neonBlue: '#3D5AFE',
    persianBlue: '#0039CB',
    persianRed: '#D32F2F',
