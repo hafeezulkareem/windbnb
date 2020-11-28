@@ -1,9 +1,16 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import ReactModal from 'react-modal'
 
 import { VerticalDivider } from '../../../Common/styledComponents'
 
-import { GUESTS, LOCATION } from '../../constants/UIConstants'
+import {
+   DECREMENT,
+   GUESTS,
+   INCREMENT,
+   LOCATION,
+   RESET
+} from '../../constants/UIConstants'
+import useCounter from '../../hooks/useCounter'
 
 import FilterDisplay from '../FilterDisplay'
 import SearchButton from '../SearchButton'
@@ -20,10 +27,12 @@ import './reactModalStyles.css'
 
 interface StaysFilterModalProps {
    activeSection: string
-   location: string
-   guestsCount: number
    onClickFilterSection: (filterSection: string) => void
-   onClickSearchButton: () => void
+   onClickSearchButton: (
+      location: string,
+      adultsCount: number,
+      childCount: number
+   ) => void
    isOpen: boolean
    onRequestClose: () => void
 }
@@ -31,12 +40,26 @@ interface StaysFilterModalProps {
 function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
    const {
       activeSection,
-      location,
-      guestsCount,
       onClickFilterSection,
       onClickSearchButton,
+      onRequestClose,
       ...other
    } = props
+
+   const [location, setLocation] = useState('')
+   const [adultsCount, setAdultsCount] = useCounter()
+   const [childCount, setChildCount] = useCounter()
+   const [guestsCount, setGuestsCount] = useState(adultsCount + childCount)
+
+   useEffect(() => {
+      setGuestsCount(adultsCount + childCount)
+   }, [adultsCount, childCount])
+
+   const onRequestCloseModal = (): void => {
+      onRequestClose()
+      setAdultsCount(RESET)
+      setChildCount(RESET)
+   }
 
    const isLocationSectionActive = activeSection === LOCATION
    const isGuestsSectionActive = activeSection === GUESTS
@@ -46,6 +69,7 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
          className='modal'
          overlayClassName='overlay'
          shouldCloseOnOverlayClick={true}
+         onRequestClose={onRequestCloseModal}
          {...other}
       >
          <FiltersContainer>
@@ -68,7 +92,11 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
             </FilterSection>
             <VerticalDivider />
             <FilterSection>
-               <SearchButton searchStays={onClickSearchButton} />
+               <SearchButton
+                  searchStays={() =>
+                     onClickSearchButton(location, adultsCount, childCount)
+                  }
+               />
             </FilterSection>
          </FiltersContainer>
          <ActiveFilterSectionContainer>
@@ -81,17 +109,17 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
                      <GuestCounter
                         title={'Adults'}
                         description={'Ages 13 or above'}
-                        count={5}
-                        increment={() => {}}
-                        decrement={() => {}}
+                        count={adultsCount}
+                        increment={() => setAdultsCount(INCREMENT)}
+                        decrement={() => setAdultsCount(DECREMENT)}
                      />
                      <LastGuestCounterContainer>
                         <GuestCounter
                            title={'Children'}
                            description={'Ages 2-12'}
-                           count={3}
-                           increment={() => {}}
-                           decrement={() => {}}
+                           count={childCount}
+                           increment={() => setChildCount(INCREMENT)}
+                           decrement={() => setChildCount(DECREMENT)}
                         />
                      </LastGuestCounterContainer>
                   </>

@@ -1,2 +1,5 @@
 export const LOCATION = 'LOCATION'
 export const GUESTS = 'GUESTS'
+export const INCREMENT = 'INCREMENT'
+export const DECREMENT = 'DECREMENT'
+export const RESET = 'RESET'

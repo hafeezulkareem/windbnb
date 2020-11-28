@@ -17,8 +17,7 @@ function WindbnbHomePage(): ReactElement {
    const [isStaysFilterModalOpen, setIsStaysFilterModalOpen] = useState(false)
    const [activeFilterSection, setActiveFilterSection] = useState(LOCATION)
    const [location, setLocation] = useState('')
-   const [adultsCount, setAdultsCount] = useState(0)
-   const [childCount, setChildCount] = useState(0)
+   const [guestsCount, setGuestsCount] = useState(0)
 
    const openStaysFilterModal = (): void => {
       setIsStaysFilterModalOpen(true)
@@ -38,14 +37,21 @@ function WindbnbHomePage(): ReactElement {
       openStaysFilterModal()
    }
 
+   const searchStays = (
+      location: string,
+      adultsCount: number,
+      childCount: number
+   ) => {
+      setLocation(location)
+      setGuestsCount(adultsCount + childCount)
+   }
+
    return (
       <HomePageContainer>
          <StaysFilterModal
             activeSection={activeFilterSection}
-            location={location}
-            guestsCount={adultsCount + childCount}
             onClickFilterSection={setActiveFilterSection}
-            onClickSearchButton={(): void => {}}
+            onClickSearchButton={searchStays}
             isOpen={isStaysFilterModalOpen}
             onRequestClose={closeStaysFilterModal}
          />
@@ -54,7 +60,7 @@ function WindbnbHomePage(): ReactElement {
             onClickAddGuestsButton={openFiltersModalWithGuestsActive}
             onClickSearchButton={openFiltersModalWithLocationActive}
             selectedPlace={location}
-            guestsCount={5}
+            guestsCount={guestsCount}
          />
          <StaysHeader country={'Finland'} staysCount={stays.length} />
          <StaysContainer>
