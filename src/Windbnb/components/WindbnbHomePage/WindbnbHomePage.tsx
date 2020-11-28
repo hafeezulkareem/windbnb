@@ -1,8 +1,8 @@
 import React, { Component, ReactElement } from 'react'
-import { inject, observer } from 'mobx-react'
 
-import WindbnbStore from '../../stores/WindbnbStore/WindbnbStore'
+import staysData from '../../../data/stays.json'
 
+import StaysFilterModal from '../StaysFilterModal'
 import StaysFilterBar from '../StaysFilterBar'
 import StaysHeader from '../StaysHeader'
 import StaysList from '../StaysList'
@@ -10,33 +10,33 @@ import AuthorInfoFooter from '../AuthorInfoFooter'
 
 import { HomePageContainer } from './styledComponents'
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface WindbnbProps {}
-
-interface InjectedProps extends WindbnbProps {
-   windbnbStore: WindbnbStore
-}
-
-@inject('windbnbStore')
-@observer
-class WindbnbHomePage extends Component<WindbnbProps> {
-   get injectedProps(): InjectedProps {
-      return this.props as InjectedProps
+class WindbnbHomePage extends Component {
+   state = {
+      stays: staysData,
+      isStaysFilterModalOpen: false
    }
 
-   get windbnbStore(): WindbnbStore {
-      const { windbnbStore } = this.injectedProps
-      return windbnbStore
+   openStaysFilterModal = (): void => {
+      this.setState({ isStaysFilterModalOpen: true })
+   }
+
+   closeStaysFilterModal = (): void => {
+      this.setState({ isStaysFilterModalOpen: false })
    }
 
    render(): ReactElement {
-      const { stays } = this.windbnbStore
+      const { stays, isStaysFilterModalOpen } = this.state
       return (
          <HomePageContainer>
-            <StaysFilterBar
-               onClickSearchInputButton={(): void => {}}
-               onClickAddGuestsButton={(): void => {}}
+            <StaysFilterModal
                onClickSearchButton={(): void => {}}
+               isOpen={isStaysFilterModalOpen}
+               onRequestClose={this.closeStaysFilterModal}
+            />
+            <StaysFilterBar
+               onClickSearchInputButton={this.openStaysFilterModal}
+               onClickAddGuestsButton={this.openStaysFilterModal}
+               onClickSearchButton={this.openStaysFilterModal}
                selectedPlace={'Helsinki, Finland'}
                guestsCount={5}
             />

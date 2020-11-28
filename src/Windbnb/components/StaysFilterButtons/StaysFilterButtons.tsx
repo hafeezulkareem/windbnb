@@ -40,6 +40,12 @@ class StaysFilterButtons extends Component<StaysFilterButtonsProps> {
       )
    }
 
+   onClick = (): void => {
+      const { onClickSearchInputButton } = this.props
+      console.log('Search input button clicked')
+      onClickSearchInputButton()
+   }
+
    render(): ReactElement {
       const {
          selectedPlace,
@@ -49,7 +55,7 @@ class StaysFilterButtons extends Component<StaysFilterButtonsProps> {
       } = this.props
       return (
          <FilterButtonsContainer>
-            <SearchInputButton onClick={onClickSearchInputButton}>
+            <SearchInputButton onClick={this.onClick}>
                <SearchInputButtonText>{selectedPlace}</SearchInputButtonText>
             </SearchInputButton>
             <HorizontalDivider />

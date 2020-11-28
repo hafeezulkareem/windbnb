@@ -26,5 +26,7 @@ export const colors = {
    sangria: '#9A0007',
    silver: '#BDBDBD',
    silverChalice: '#A9A9A9',
-   white: '#ffffff'
+   white: '#ffffff',
+
+   modalBackground: 'rgba(79, 79, 79, 0.4)'
 }

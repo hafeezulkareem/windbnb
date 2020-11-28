@@ -1,0 +1,39 @@
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+   overflow: hidden;
+}
+
+.overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(79, 79, 79, 0.4);
+   opacity: 0;
+   transition: opacity 250ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+   opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+   opacity: 0;
+}
+
+.modal {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 85vh;
+   background-color: #ffffff;
+   padding: 96px 96px 0;
+}
+
+@media only screen and (min-width: 600px) {
+   .modal {
+      height: 45vh;
+   }
+}
