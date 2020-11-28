@@ -1,6 +1,8 @@
-import React, { Component, ReactElement } from 'react'
+import React, { ReactElement, useState } from 'react'
 
 import staysData from '../../../data/stays.json'
+
+import { GUESTS, LOCATION } from '../../constants/UIConstants'
 
 import StaysFilterModal from '../StaysFilterModal'
 import StaysFilterBar from '../StaysFilterBar'
@@ -10,42 +12,55 @@ import AuthorInfoFooter from '../AuthorInfoFooter'
 
 import { HomePageContainer } from './styledComponents'
 
-class WindbnbHomePage extends Component {
-   state = {
-      stays: staysData,
-      isStaysFilterModalOpen: false
+function WindbnbHomePage(): ReactElement {
+   const [stays, setStays] = useState(staysData)
+   const [isStaysFilterModalOpen, setIsStaysFilterModalOpen] = useState(false)
+   const [activeFilterSection, setActiveFilterSection] = useState(LOCATION)
+   const [location, setLocation] = useState('')
+   const [adultsCount, setAdultsCount] = useState(0)
+   const [childCount, setChildCount] = useState(0)
+
+   const openStaysFilterModal = (): void => {
+      setIsStaysFilterModalOpen(true)
    }
 
-   openStaysFilterModal = (): void => {
-      this.setState({ isStaysFilterModalOpen: true })
+   const closeStaysFilterModal = (): void => {
+      setIsStaysFilterModalOpen(false)
    }
 
-   closeStaysFilterModal = (): void => {
-      this.setState({ isStaysFilterModalOpen: false })
+   const openFiltersModalWithLocationActive = (): void => {
+      setActiveFilterSection(LOCATION)
+      openStaysFilterModal()
    }
 
-   render(): ReactElement {
-      const { stays, isStaysFilterModalOpen } = this.state
-      return (
-         <HomePageContainer>
-            <StaysFilterModal
-               onClickSearchButton={(): void => {}}
-               isOpen={isStaysFilterModalOpen}
-               onRequestClose={this.closeStaysFilterModal}
-            />
-            <StaysFilterBar
-               onClickSearchInputButton={this.openStaysFilterModal}
-               onClickAddGuestsButton={this.openStaysFilterModal}
-               onClickSearchButton={this.openStaysFilterModal}
-               selectedPlace={'Helsinki, Finland'}
-               guestsCount={5}
-            />
-            <StaysHeader country={'Finland'} staysCount={stays.length} />
-            <StaysList stays={stays} />
-            <AuthorInfoFooter />
-         </HomePageContainer>
-      )
+   const openFiltersModalWithGuestsActive = (): void => {
+      setActiveFilterSection(GUESTS)
+      openStaysFilterModal()
    }
+
+   return (
+      <HomePageContainer>
+         <StaysFilterModal
+            activeSection={activeFilterSection}
+            location={location}
+            guestsCount={adultsCount + childCount}
+            onClickFilterSection={setActiveFilterSection}
+            onClickSearchButton={(): void => {}}
+            isOpen={isStaysFilterModalOpen}
+            onRequestClose={closeStaysFilterModal}
+         />
+         <StaysFilterBar
+            onClickSearchInputButton={openFiltersModalWithLocationActive}
+            onClickAddGuestsButton={openFiltersModalWithGuestsActive}
+            onClickSearchButton={openFiltersModalWithLocationActive}
+            selectedPlace={location}
+            guestsCount={5}
+         />
+         <StaysHeader country={'Finland'} staysCount={stays.length} />
+         <StaysList stays={stays} />
+         <AuthorInfoFooter />
+      </HomePageContainer>
+   )
 }
 
 export default WindbnbHomePage

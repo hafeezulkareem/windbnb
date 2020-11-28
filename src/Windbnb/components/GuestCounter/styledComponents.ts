@@ -7,7 +7,11 @@ import {
    Typo14Gray31MulishMedium
 } from '../../../Common/typos'
 
-export const CounterContainer = styled.div``
+export const CounterContainer = styled.div`
+   ${tw`
+      flex flex-col
+   `}
+`
 
 export const CounterTitle = styled(Typo14BlackMulishBold)``
 

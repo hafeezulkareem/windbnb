@@ -48,7 +48,9 @@ class StaysFilterButtons extends Component<StaysFilterButtonsProps> {
       return (
          <FilterButtonsContainer>
             <SearchInputButton onClick={onClickSearchInputButton}>
-               <SearchInputButtonText>{selectedPlace}</SearchInputButtonText>
+               <SearchInputButtonText>
+                  {selectedPlace === '' ? 'Select location' : selectedPlace}
+               </SearchInputButtonText>
             </SearchInputButton>
             <HorizontalDivider />
             <AddGuestsButton onClick={onClickAddGuestsButton}>

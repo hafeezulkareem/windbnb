@@ -3,7 +3,11 @@ import tw, { styled } from 'twin.macro'
 import { Button } from '../../../Common/components/Button'
 import { Typo14ConcreteMulishBold } from '../../../Common/typos'
 
-export const SearchButtonContainer = styled.div``
+export const SearchButtonContainer = styled.div`
+   ${tw`
+        self-center
+    `}
+`
 
 export const SearchButtonWithIcon = styled(Button)`
    ${tw`

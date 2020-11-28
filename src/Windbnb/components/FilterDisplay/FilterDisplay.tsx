@@ -1,9 +1,10 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 
 import {
    FilterDisplayContainer,
    FilterLabelText,
-   FilteredValueText
+   FilteredValueText,
+   EmptyFilteredValueText
 } from './styledComponents'
 
 interface FilterDisplayProps {
@@ -15,13 +16,23 @@ interface FilterDisplayProps {
 
 function FilterDisplay(props: FilterDisplayProps): ReactElement {
    const { filterLabel, filteredValue, isActive, changeActiveFiler } = props
+
+   const updatedFilteredValue = (): ReactNode =>
+      filteredValue === '0' ? (
+         <EmptyFilteredValueText>Add guests</EmptyFilteredValueText>
+      ) : filteredValue === '' ? (
+         <EmptyFilteredValueText>Add location</EmptyFilteredValueText>
+      ) : (
+         <FilteredValueText>{filteredValue}</FilteredValueText>
+      )
+
    return (
       <FilterDisplayContainer
          onClick={(): void => changeActiveFiler(filterLabel.toUpperCase())}
          isActive={isActive}
       >
          <FilterLabelText>{filterLabel}</FilterLabelText>
-         <FilteredValueText>{filteredValue}</FilteredValueText>
+         {updatedFilteredValue()}
       </FilterDisplayContainer>
    )
 }
