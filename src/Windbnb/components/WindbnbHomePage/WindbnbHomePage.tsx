@@ -10,7 +10,7 @@ import StaysHeader from '../StaysHeader'
 import StaysList from '../StaysList'
 import AuthorInfoFooter from '../AuthorInfoFooter'
 
-import { HomePageContainer } from './styledComponents'
+import { HomePageContainer, StaysContainer } from './styledComponents'
 
 function WindbnbHomePage(): ReactElement {
    const [stays, setStays] = useState(staysData)
@@ -57,7 +57,9 @@ function WindbnbHomePage(): ReactElement {
             guestsCount={5}
          />
          <StaysHeader country={'Finland'} staysCount={stays.length} />
-         <StaysList stays={stays} />
+         <StaysContainer>
+            <StaysList stays={stays} />
+         </StaysContainer>
          <AuthorInfoFooter />
       </HomePageContainer>
    )

@@ -5,3 +5,9 @@ export const HomePageContainer = styled.div`
         px-12px md:px-32px lg:px-64px pt-22px md:pt-42px pb-20px
     `}
 `
+
+export const StaysContainer = styled.div`
+   ${tw`
+        mt-32px
+    `}
+`
