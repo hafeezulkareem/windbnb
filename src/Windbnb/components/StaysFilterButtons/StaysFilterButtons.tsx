@@ -1,5 +1,4 @@
 import React, { Component, ReactElement, ReactNode } from 'react'
-import { observer } from 'mobx-react'
 import { BiSearchAlt2 } from 'react-icons/bi'
 
 import { HorizontalDivider } from '../../../Common/styledComponents'
@@ -24,7 +23,6 @@ interface StaysFilterButtonsProps {
    guestsCount: number
 }
 
-@observer
 class StaysFilterButtons extends Component<StaysFilterButtonsProps> {
    renderAddGuestsButtonChildren = (): ReactNode => {
       const { guestsCount } = this.props
@@ -40,12 +38,6 @@ class StaysFilterButtons extends Component<StaysFilterButtonsProps> {
       )
    }
 
-   onClick = (): void => {
-      const { onClickSearchInputButton } = this.props
-      console.log('Search input button clicked')
-      onClickSearchInputButton()
-   }
-
    render(): ReactElement {
       const {
          selectedPlace,
@@ -55,7 +47,7 @@ class StaysFilterButtons extends Component<StaysFilterButtonsProps> {
       } = this.props
       return (
          <FilterButtonsContainer>
-            <SearchInputButton onClick={this.onClick}>
+            <SearchInputButton onClick={onClickSearchInputButton}>
                <SearchInputButtonText>{selectedPlace}</SearchInputButtonText>
             </SearchInputButton>
             <HorizontalDivider />

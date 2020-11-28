@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react'
-import { observer } from 'mobx-react'
 
 import WindbnbLogo from '../../../Common/icons/WindbnbLogo'
 
@@ -19,8 +18,8 @@ interface StaysFilterBarProps {
    guestsCount: number
 }
 
-const StaysFilterBar = observer(
-   (props: StaysFilterBarProps): ReactElement => (
+function StaysFilterBar(props: StaysFilterBarProps): ReactElement {
+   return (
       <FilterBarContainer>
          <WindbnbLogoContainer>
             <WindbnbLogo />
@@ -30,6 +29,6 @@ const StaysFilterBar = observer(
          </StaysFilterButtonsContainer>
       </FilterBarContainer>
    )
-)
+}
 
 export default StaysFilterBar

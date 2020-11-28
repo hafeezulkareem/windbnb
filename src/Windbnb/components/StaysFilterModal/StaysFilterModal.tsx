@@ -1,5 +1,4 @@
 import React, { Component, ReactElement } from 'react'
-import { observer } from 'mobx-react'
 import ReactModal from 'react-modal'
 
 import './reactModalStyles.css'
@@ -10,7 +9,6 @@ interface StaysFilterModalProps {
    onRequestClose: () => void
 }
 
-@observer
 class StaysFilterModal extends Component<StaysFilterModalProps> {
    render(): ReactElement {
       const { onClickSearchButton, ...other } = this.props
