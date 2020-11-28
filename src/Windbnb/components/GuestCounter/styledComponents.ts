@@ -29,7 +29,7 @@ export const CounterButtonsContainer = styled.div`
 
 export const CounterButton = styled(Button)`
    ${tw`
-      p-8px rounded-4px
+      p-8px bg-transparent rounded-4px hover:bg-concrete border border-solid border-gray3
    `}
 `
 
