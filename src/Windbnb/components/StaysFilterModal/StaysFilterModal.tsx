@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import ReactModal from 'react-modal'
 
-import { HorizontalDivider } from '../../../Common/styledComponents'
+import { VerticalDivider } from '../../../Common/styledComponents'
 
 import { GUESTS, LOCATION } from '../../constants/UIConstants'
 
@@ -57,7 +57,7 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
                   changeActiveFiler={onClickFilterSection}
                />
             </FilterSection>
-            <HorizontalDivider />
+            <VerticalDivider />
             <FilterSection>
                <FilterDisplay
                   filterLabel='Guests'
@@ -66,7 +66,7 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
                   changeActiveFiler={onClickFilterSection}
                />
             </FilterSection>
-            <HorizontalDivider />
+            <VerticalDivider />
             <FilterSection>
                <SearchButton searchStays={onClickSearchButton} />
             </FilterSection>

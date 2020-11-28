@@ -1,7 +1,7 @@
 import React, { Component, ReactElement, ReactNode } from 'react'
 import { BiSearchAlt2 } from 'react-icons/bi'
 
-import { HorizontalDivider } from '../../../Common/styledComponents'
+import { VerticalDivider } from '../../../Common/styledComponents'
 import { colors } from '../../../Common/themes/colors'
 
 import {
@@ -52,11 +52,11 @@ class StaysFilterButtons extends Component<StaysFilterButtonsProps> {
                   {selectedPlace === '' ? 'Select location' : selectedPlace}
                </SearchInputButtonText>
             </SearchInputButton>
-            <HorizontalDivider />
+            <VerticalDivider />
             <AddGuestsButton onClick={onClickAddGuestsButton}>
                {this.renderAddGuestsButtonChildren()}
             </AddGuestsButton>
-            <HorizontalDivider />
+            <VerticalDivider />
             <SearchButton onClick={onClickSearchButton}>
                <BiSearchAlt2 size={22} fill={colors.burntSienna} />
             </SearchButton>
