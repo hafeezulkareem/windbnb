@@ -23,3 +23,9 @@ export const ActiveFilterSection = styled(FilterSection)`
         flex-col justify-start
     `}
 `
+
+export const LastGuestCounterContainer = styled.div`
+   ${tw`
+        mt-32px
+    `}
+`

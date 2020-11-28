@@ -13,7 +13,8 @@ import {
    ActiveFilterSection,
    FiltersContainer,
    FilterSection,
-   ActiveFilterSectionContainer
+   ActiveFilterSectionContainer,
+   LastGuestCounterContainer
 } from './styledComponents'
 import './reactModalStyles.css'
 
@@ -79,18 +80,20 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
                   <>
                      <GuestCounter
                         title={'Adults'}
-                        description={'Add guests'}
+                        description={'Ages 13 or above'}
                         count={5}
                         increment={() => {}}
                         decrement={() => {}}
                      />
-                     <GuestCounter
-                        title={'Children'}
-                        description={'Add guests'}
-                        count={3}
-                        increment={() => {}}
-                        decrement={() => {}}
-                     />
+                     <LastGuestCounterContainer>
+                        <GuestCounter
+                           title={'Children'}
+                           description={'Ages 2-12'}
+                           count={3}
+                           increment={() => {}}
+                           decrement={() => {}}
+                        />
+                     </LastGuestCounterContainer>
                   </>
                ) : null}
             </ActiveFilterSection>
