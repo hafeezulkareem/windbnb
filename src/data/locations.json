@@ -1,8 +1,7 @@
 [
-   { "name": "Delhi, India" },
-   {"name": "Hyderabad, India"}
-   {
-      "name": "Helsinki, Finland"
-   },
-   { "name": "Turku, Finland" }
+   { "id": "0", "name": "Delhi, India" },
+   { "id": "1", "name": "Visakhapatnam, India" },
+   { "id": "2", "name": "Pune, India" },
+   { "id": "3", "name": "Helsinki, Finland" },
+   { "id": "4", "name": "Turku, Finland" }
 ]
