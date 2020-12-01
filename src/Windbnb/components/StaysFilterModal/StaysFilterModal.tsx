@@ -12,6 +12,7 @@ import {
    RESET
 } from '../../constants/UIConstants'
 import useCounter from '../../hooks/useCounter'
+import { LocationItemType } from '../../types'
 
 import FilterDisplay from '../FilterDisplay'
 import SearchButton from '../SearchButton'
@@ -31,7 +32,7 @@ interface StaysFilterModalProps {
    activeSection: string
    onClickFilterSection: (filterSection: string) => void
    onClickSearchButton: (
-      location: string,
+      location: LocationItemType,
       adultsCount: number,
       childCount: number
    ) => void
@@ -48,7 +49,7 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
       ...other
    } = props
 
-   const [location, setLocation] = useState('')
+   const [location, setLocation] = useState({ id: '', name: '' })
    const [adultsCount, setAdultsCount] = useCounter()
    const [childCount, setChildCount] = useCounter()
    const [guestsCount, setGuestsCount] = useState(adultsCount + childCount)
@@ -66,7 +67,7 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
    const updateLocation = (locationId: string): void => {
       const location = locations.find((location) => location.id === locationId)
       if (location) {
-         setLocation(location.name)
+         setLocation(location)
       }
    }
 
@@ -85,7 +86,7 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
             <FilterSection>
                <FilterDisplay
                   filterLabel='Location'
-                  filteredValue={location}
+                  filteredValue={location.name}
                   isActive={isLocationSectionActive}
                   changeActiveFiler={onClickFilterSection}
                />

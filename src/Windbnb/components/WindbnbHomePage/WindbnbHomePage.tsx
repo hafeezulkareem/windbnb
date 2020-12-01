@@ -3,6 +3,7 @@ import React, { ReactElement, useState } from 'react'
 import staysData from '../../../data/stays.json'
 
 import { GUESTS, LOCATION } from '../../constants/UIConstants'
+import { LocationItemType } from '../../types'
 
 import StaysFilterModal from '../StaysFilterModal'
 import StaysFilterBar from '../StaysFilterBar'
@@ -38,12 +39,12 @@ function WindbnbHomePage(): ReactElement {
    }
 
    const searchStays = (
-      location: string,
+      location: LocationItemType,
       adultsCount: number,
       childCount: number
    ) => {
-      setLocation(location)
       setGuestsCount(adultsCount + childCount)
+      closeStaysFilterModal()
    }
 
    return (
