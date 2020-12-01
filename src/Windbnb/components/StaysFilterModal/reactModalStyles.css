@@ -27,13 +27,14 @@
    top: 0;
    left: 0;
    right: 0;
-   height: 85vh;
+   height: 75vh;
    background-color: #ffffff;
-   padding: 96px 96px 0;
+   padding: 24px 24px 0;
 }
 
 @media only screen and (min-width: 600px) {
    .modal {
       height: 45vh;
+      padding: 96px 96px 0;
    }
 }

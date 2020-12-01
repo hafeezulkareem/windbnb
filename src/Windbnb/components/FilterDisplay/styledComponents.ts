@@ -8,7 +8,7 @@ import {
 
 export const FilterDisplayContainer = styled.div`
    ${tw`
-        w-full flex flex-col rounded-16px px-26px py-12px cursor-pointer
+        flex flex-col rounded-16px px-26px py-12px cursor-pointer
     `}
    ${({ isActive }): TwStyle =>
       isActive ? tw`border border-solid border-gray20` : tw``}
