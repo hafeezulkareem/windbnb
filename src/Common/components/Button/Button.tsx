@@ -3,12 +3,7 @@ import { ClipLoader } from 'react-spinners'
 
 import { getButtonColors } from './utils'
 import { colors, shapes, sizes, variants } from './constants'
-import {
-   EndIconContainer,
-   Icon,
-   StartIconContainer,
-   StyledButton
-} from './styledComponents'
+import { StyledButton } from './styledComponents'
 
 interface ButtonProps {
    onClick: Function
@@ -18,8 +13,6 @@ interface ButtonProps {
    variant: string
    color: string
    shape: string
-   startIcon: string
-   endIcon: string
    disableShadow: boolean
    className: string
 }
@@ -33,8 +26,6 @@ class Button extends Component<ButtonProps> {
       variant: variants.default,
       color: colors.default,
       shape: shapes.square,
-      startIcon: '',
-      endIcon: '',
       disableShadow: false,
       className: ''
    }
@@ -43,30 +34,6 @@ class Button extends Component<ButtonProps> {
    static colors = colors
    static shapes = shapes
    static variants = variants
-
-   renderButtonStartIcon = (): ReactNode => {
-      const { startIcon } = this.props
-      if (startIcon) {
-         return (
-            <StartIconContainer>
-               <Icon className='material-icons'>{startIcon}</Icon>
-            </StartIconContainer>
-         )
-      }
-      return null
-   }
-
-   renderButtonEndIcon = (): ReactNode => {
-      const { endIcon } = this.props
-      if (endIcon) {
-         return (
-            <EndIconContainer>
-               <Icon className='material-icons'>{endIcon}</Icon>
-            </EndIconContainer>
-         )
-      }
-      return null
-   }
 
    renderButtonChild = (): ReactNode => {
       const { loading, children, color } = this.props
@@ -103,9 +70,7 @@ class Button extends Component<ButtonProps> {
             onClick={onClick}
             {...other}
          >
-            {this.renderButtonStartIcon()}
             {this.renderButtonChild()}
-            {this.renderButtonEndIcon()}
          </StyledButton>
       )
    }

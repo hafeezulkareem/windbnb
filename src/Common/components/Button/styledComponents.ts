@@ -103,23 +103,3 @@ export const StyledButton = styled.button(
       disabled ? tw`cursor-not-allowed opacity-50` : tw`cursor-pointer`
    ]
 )
-
-export const IconContainer = styled.div`
-   ${tw`
-      flex items-center
-   `}
-`
-
-export const StartIconContainer = styled(IconContainer)`
-   ${tw`
-      mr-8px
-    `}
-`
-
-export const EndIconContainer = styled(IconContainer)`
-   ${tw`
-        ml-8px
-    `}
-`
-
-export const Icon = styled.i``
