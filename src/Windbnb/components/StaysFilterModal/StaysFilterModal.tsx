@@ -23,7 +23,9 @@ import {
    FiltersContainer,
    FilterSection,
    ActiveFilterSectionContainer,
-   LastGuestCounterContainer
+   LastGuestCounterContainer,
+   DesktopFilterSection,
+   MobileFilterSection
 } from './styledComponents'
 import './reactModalStyles.css'
 
@@ -98,16 +100,18 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
                />
             </FilterSection>
             <VerticalDivider />
-            <FilterSection>
+            <DesktopFilterSection>
                <SearchButton
                   searchStays={() =>
                      onClickSearchButton(location, adultsCount, childCount)
                   }
                />
-            </FilterSection>
+            </DesktopFilterSection>
          </FiltersContainer>
          <ActiveFilterSectionContainer>
-            <ActiveFilterSection>
+            <ActiveFilterSection
+               isLocationSectionActive={isLocationSectionActive}
+            >
                {isLocationSectionActive ? (
                   <LocationsList
                      locations={locations}
@@ -138,6 +142,13 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
                ) : null}
             </ActiveFilterSection>
          </ActiveFilterSectionContainer>
+         <MobileFilterSection>
+            <SearchButton
+               searchStays={() =>
+                  onClickSearchButton(location, adultsCount, childCount)
+               }
+            />
+         </MobileFilterSection>
       </ReactModal>
    )
 }
