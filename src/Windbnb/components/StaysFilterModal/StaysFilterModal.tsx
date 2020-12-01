@@ -49,7 +49,7 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
       ...other
    } = props
 
-   const [location, setLocation] = useState({ id: '', name: '' })
+   const [location, setLocation] = useState(locations[3])
    const [adultsCount, setAdultsCount] = useCounter()
    const [childCount, setChildCount] = useCounter()
    const [guestsCount, setGuestsCount] = useState(adultsCount + childCount)
@@ -62,6 +62,7 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
       onRequestClose()
       setAdultsCount(RESET)
       setChildCount(RESET)
+      setLocation(locations[3])
    }
 
    const updateLocation = (locationId: string): void => {

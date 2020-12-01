@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 
 import Stay from '../Stay'
 
-import { StaysListContainer } from './styledComponents'
+import { NoStaysText, StaysListContainer } from './styledComponents'
 
 interface StaysListProps {
    stays
@@ -12,9 +12,11 @@ function StaysList(props: StaysListProps): ReactElement {
    const { stays } = props
    return (
       <StaysListContainer>
-         {stays.map((stay) => (
-            <Stay key={stay.id} stayDetails={stay} />
-         ))}
+         {stays.length > 0 ? (
+            stays.map((stay) => <Stay key={stay.id} stayDetails={stay} />)
+         ) : (
+            <NoStaysText>No Stays to display</NoStaysText>
+         )}
       </StaysListContainer>
    )
 }

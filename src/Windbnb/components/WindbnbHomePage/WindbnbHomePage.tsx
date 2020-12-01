@@ -1,9 +1,9 @@
-import React, { ReactElement, useState } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 
-import staysData from '../../../data/stays.json'
+import locations from '../../../data/locations.json'
 
 import { GUESTS, LOCATION } from '../../constants/UIConstants'
-import { LocationItemType } from '../../types'
+import { LocationItemType, StayType } from '../../types'
 
 import StaysFilterModal from '../StaysFilterModal'
 import StaysFilterBar from '../StaysFilterBar'
@@ -12,13 +12,18 @@ import StaysList from '../StaysList'
 import AuthorInfoFooter from '../AuthorInfoFooter'
 
 import { HomePageContainer, StaysContainer } from './styledComponents'
+import { getCountry, getMatchedStays } from './utils'
 
 function WindbnbHomePage(): ReactElement {
-   const [stays, setStays] = useState(staysData)
+   const [stays, setStays] = useState<Array<StayType>>([])
    const [isStaysFilterModalOpen, setIsStaysFilterModalOpen] = useState(false)
    const [activeFilterSection, setActiveFilterSection] = useState(LOCATION)
-   const [location, setLocation] = useState('')
+   const [location, setLocation] = useState(locations[3])
    const [guestsCount, setGuestsCount] = useState(0)
+
+   useEffect(() => {
+      setStays(getMatchedStays(location.name, guestsCount))
+   }, [location, guestsCount])
 
    const openStaysFilterModal = (): void => {
       setIsStaysFilterModalOpen(true)
@@ -43,6 +48,7 @@ function WindbnbHomePage(): ReactElement {
       adultsCount: number,
       childCount: number
    ) => {
+      setLocation(location)
       setGuestsCount(adultsCount + childCount)
       closeStaysFilterModal()
    }
@@ -60,10 +66,13 @@ function WindbnbHomePage(): ReactElement {
             onClickSearchInputButton={openFiltersModalWithLocationActive}
             onClickAddGuestsButton={openFiltersModalWithGuestsActive}
             onClickSearchButton={openFiltersModalWithLocationActive}
-            selectedPlace={location}
+            selectedPlace={location.name}
             guestsCount={guestsCount}
          />
-         <StaysHeader country={'Finland'} staysCount={stays.length} />
+         <StaysHeader
+            country={getCountry(location.name)}
+            staysCount={stays.length}
+         />
          <StaysContainer>
             <StaysList stays={stays} />
          </StaysContainer>
