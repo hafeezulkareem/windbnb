@@ -21,7 +21,9 @@ function StaysHeader(props: StaysHeaderProps): ReactElement {
             <TitleText>{country}</TitleText>
          </HeaderTitleContainer>
          <StaysCountContainer>
-            <StaysCountText>{staysCount - 2}+ stays</StaysCountText>
+            <StaysCountText>
+               {staysCount - 2 > 0 ? staysCount - 2 : staysCount}+ stays
+            </StaysCountText>
          </StaysCountContainer>
       </HeaderContainer>
    )
