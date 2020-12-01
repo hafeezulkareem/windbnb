@@ -20,7 +20,7 @@ export const ActiveFilterSectionContainer = styled.div`
 
 export const ActiveFilterSection = styled(FilterSection)`
    ${tw`
-        flex-col justify-start
+        h-full flex-col justify-start
     `}
 `
 

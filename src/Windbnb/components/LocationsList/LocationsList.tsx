@@ -1,14 +1,10 @@
 import React, { ReactElement } from 'react'
-import { ImLocation } from 'react-icons/im'
 
 import { LocationItemType } from '../../types'
 
-import {
-   LocationIconContainer,
-   LocationItem,
-   LocationsListContainer,
-   LocationText
-} from './styledComponents'
+import LocationListItem from '../LocationListItem'
+
+import { LocationsListContainer } from './styledComponents'
 
 interface LocationsListProps {
    locations: Array<LocationItemType>
@@ -20,16 +16,11 @@ function LocationsList(props: LocationsListProps): ReactElement {
    return (
       <LocationsListContainer>
          {locations.map((location) => (
-            <LocationItem
-               onClick={() => onClickLocation(location.id)}
+            <LocationListItem
                key={location.id}
-               disableShadow
-            >
-               <LocationIconContainer>
-                  <ImLocation size={20} />
-               </LocationIconContainer>
-               <LocationText>{location.name}</LocationText>
-            </LocationItem>
+               location={location}
+               onClickLocation={onClickLocation}
+            />
          ))}
       </LocationsListContainer>
    )
