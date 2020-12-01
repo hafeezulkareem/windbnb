@@ -2,6 +2,7 @@ import React, { ReactElement, useEffect, useState } from 'react'
 import ReactModal from 'react-modal'
 
 import { VerticalDivider } from '../../../Common/styledComponents'
+import locations from '../../../data/locations.json'
 
 import {
    DECREMENT,
@@ -15,6 +16,7 @@ import useCounter from '../../hooks/useCounter'
 import FilterDisplay from '../FilterDisplay'
 import SearchButton from '../SearchButton'
 import GuestCounter from '../GuestCounter'
+import LocationsList from '../LocationsList'
 
 import {
    ActiveFilterSection,
@@ -61,6 +63,13 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
       setChildCount(RESET)
    }
 
+   const updateLocation = (locationId: string): void => {
+      const location = locations.find((location) => location.id === locationId)
+      if (location) {
+         setLocation(location.name)
+      }
+   }
+
    const isLocationSectionActive = activeSection === LOCATION
    const isGuestsSectionActive = activeSection === GUESTS
 
@@ -101,7 +110,12 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
          </FiltersContainer>
          <ActiveFilterSectionContainer>
             <ActiveFilterSection>
-               {isLocationSectionActive ? 'Location' : null}
+               {isLocationSectionActive ? (
+                  <LocationsList
+                     locations={locations}
+                     onClickLocation={updateLocation}
+                  />
+               ) : null}
             </ActiveFilterSection>
             <ActiveFilterSection>
                {isGuestsSectionActive ? (

@@ -4,7 +4,7 @@
       "city": "Delhi",
       "country": "India",
       "superHost": false,
-      "title": "Stylist apartment in center of the city",
+      "title": "Lovely Studio near Railway Station",
       "rating": 4.0,
       "maxGuests": 3,
       "type": "Private",
@@ -26,14 +26,14 @@
    {
       "id": "17",
       "city": "Pune",
-      "country": "Finland",
+      "country": "Pune",
       "superHost": true,
-      "title": "Stylist apartment in center of the city",
+      "title": "Beautiful and comfortable old wooden house",
       "rating": 4.7,
       "maxGuests": 3,
-      "type": "Entire apartment",
+      "type": "Entire House",
       "beds": 2,
-      "photo": "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
+      "photo": "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
    },
    {
       "id": "1",
