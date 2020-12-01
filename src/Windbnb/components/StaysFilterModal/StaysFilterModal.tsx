@@ -8,8 +8,7 @@ import {
    DECREMENT,
    GUESTS,
    INCREMENT,
-   LOCATION,
-   RESET
+   LOCATION
 } from '../../constants/UIConstants'
 import useCounter from '../../hooks/useCounter'
 import { LocationItemType } from '../../types'
@@ -60,9 +59,6 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
 
    const onRequestCloseModal = (): void => {
       onRequestClose()
-      setAdultsCount(RESET)
-      setChildCount(RESET)
-      setLocation(locations[3])
    }
 
    const updateLocation = (locationId: string): void => {
