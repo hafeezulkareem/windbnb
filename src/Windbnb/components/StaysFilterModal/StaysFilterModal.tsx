@@ -141,6 +141,13 @@ function StaysFilterModal(props: StaysFilterModalProps): ReactElement {
                   </>
                ) : null}
             </ActiveFilterSection>
+            <MobileFilterSection>
+               <SearchButton
+                  searchStays={() =>
+                     onClickSearchButton(location, adultsCount, childCount)
+                  }
+               />
+            </MobileFilterSection>
          </ActiveFilterSectionContainer>
          <MobileFilterSection>
             <SearchButton
