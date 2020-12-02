@@ -36,10 +36,11 @@
 
 -  [React](https://reactjs.org/)
 -  [Tailwind](https://tailwindcss.com/)
+-  [Hooks](https://reactjs.org/docs/hooks-intro.html)
 
 ## Features
 
-You can use this common `Button` component in your next React Project. You can use the predefined styles for buttons or define your custom ones.
+It's the UI clone of AirBnb. You can explore the project by cloning it.
 
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/ohgVTyJCbm5OZyTB2gNY) was to build an application to complete the given user stories.
 
