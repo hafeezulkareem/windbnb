@@ -20,4 +20,22 @@ export const AuthorInfoContainer = styled.div`
     `}
 `
 
-export const AuthorInfoText = styled(Typo14SilverChaliceMontserratSemiBold)``
+export const Link = styled.a`
+   ${tw`
+      text-darkGray no-underline
+   `}
+`
+
+export const ExtraLink = styled(Link)`
+   ${tw`
+      ml-8px
+   `}
+`
+
+export const AuthorInfoText = styled(Typo14SilverChaliceMontserratSemiBold)`
+   ${Link}:hover & {
+      ${tw`
+         text-burntSienna
+      `}
+   }
+`
