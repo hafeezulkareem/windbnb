@@ -6,7 +6,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://react-button-component.netlify.app/" target="_blank">
+    <a href="https://hafeezulkareem-windbnb.netlify.app/" target="_blank">
       Demo
     </a>
     <span> | </span>
@@ -42,7 +42,7 @@
 
 It's the UI clone of AirBnb. You can explore the project by cloning it.
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/ohgVTyJCbm5OZyTB2gNY) was to build an application to complete the given user stories.
+This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/3JFYedSOZqAxYuOCNmYD) was to build an application to complete the given user stories.
 
 ## How To Use
 
