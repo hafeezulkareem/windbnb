@@ -20,19 +20,14 @@ export const DesktopFilterSection = styled(FilterSection)`
 
 export const MobileFilterSection = styled(FilterSection)`
    ${tw`
-        flex md:hidden mt-24px justify-center
+        flex md:hidden mt-auto pb-24px justify-center
     `}
 `
 
 export const ActiveFilterSectionContainer = styled.div`
    ${tw`
-        flex flex-col md:flex-row mt-32px
+        flex flex-col md:flex-row mt-32px mb-24px md:mb-0
     `}
-   background-color: crimson;
-   height: calc(100% - 200px);
-   @media only screen and (min-width: 760px) {
-      height: calc(100% - 87px);
-   }
 `
 
 export const ActiveFilterSection = styled(FilterSection)`
